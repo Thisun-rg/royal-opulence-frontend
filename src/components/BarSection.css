@@ -1,0 +1,69 @@
+.bar-hero {
+  position: relative;
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.bar-overlay {
+  background: linear-gradient(
+    rgba(20, 5, 30, 0.75),
+    rgba(20, 5, 30, 0.85)
+  );
+  padding: 5rem;
+  max-width: 600px;
+  margin-left: 6%;
+  color: #f8f5f0;
+}
+
+.bar-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.bar-overlay h2 {
+  font-size: 3rem;
+  color: var(--secondary);
+  margin-bottom: 1.2rem;
+}
+
+.bar-overlay p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #e5e0d8;
+  margin-bottom: 2rem;
+}
+
+.bar-btn {
+  background: transparent;
+  border: 1.5px solid var(--secondary);
+  color: var(--secondary);
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.bar-btn:hover {
+  background: var(--secondary);
+  color: #2e0f3b;
+}
+
+@media (max-width: 768px) {
+  .bar-overlay {
+    padding: 3rem;
+    margin: 0 1.5rem;
+  }
+
+  .bar-overlay h2 {
+    font-size: 2.2rem;
+  }
+}

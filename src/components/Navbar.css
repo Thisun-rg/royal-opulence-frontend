@@ -1,0 +1,102 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 95%;
+  min-height: 50px; /* increased */
+  background: linear-gradient(
+    to right,
+    rgba(46,15,59,0.96),
+    rgba(75,40,109,0.96)
+  );
+  display: flex;
+  align-items: center;   /* vertical centering */
+  justify-content: space-between;
+  padding: 0 3rem;
+  z-index: 1000;
+}
+
+
+.nav-logo {
+  color: var(--secondary);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #f5f0e8;
+  font-weight: 400;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+  color: var(--secondary); /* Imperial Gold */
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--secondary);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.account-btn {
+  border: 1px solid var(--secondary);
+  padding: 8px 18px;
+  border-radius: 25px;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.book-btn {
+  background: var(--secondary);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-logo img {
+  height: 42px;      /* perfect for navbar */
+  width: auto;
+  object-fit: contain;
+}

@@ -1,0 +1,37 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    rgba(46, 15, 59, 0.85),
+    rgba(46, 15, 59, 0.85)
+  ),
+  url('/assets/luxury-room.jpg') center/cover no-repeat;
+}
+
+.login-card {
+  background: var(--highlight);
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.login-card h2 {
+  color: var(--primary);
+  text-align: center;
+}
+
+.login-card button {
+  background: var(--secondary);
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: var(--primary);
+}

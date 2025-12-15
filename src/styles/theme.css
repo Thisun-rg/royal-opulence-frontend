@@ -1,0 +1,20 @@
+:root {
+  --primary: #4B286D;        /* Royal Purple */
+  --secondary: #C5A253;      /* Imperial Gold */
+  --background: #F8F5F0;     /* Ivory White */
+  --text: #2C2C2C;           /* Deep Charcoal */
+  --accent: #D8C3E8;         /* Lavender Mist */
+  --highlight: #EADBC8;      /* Champagne Beige */
+  --contrast: #2E0F3B;       /* Rich Plum */
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
+}

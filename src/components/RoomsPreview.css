@@ -1,0 +1,188 @@
+.rooms-preview {
+  padding: 5rem 2rem;
+  background: var(--background);
+  text-align: center;
+}
+
+.rooms-preview h2 {
+  font-size: 2.6rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.rooms-preview .section-desc {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--text);
+}
+
+/* === Carousel Layout === */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+/* === Navigation Buttons === */
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.15);
+}
+
+/* === Room Cards (Base) === */
+.room-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  transition: all 0.45s ease;
+}
+
+/* === Active (Center) Card === */
+.room-card.active {
+  width: 720px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+.room-card.active img {
+  height: 420px;
+}
+
+/* === Side (Half-visible) Cards === */
+.room-card.side {
+  width: 420px;
+  opacity: 0.45;
+  transform: scale(0.9);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.room-card.side img {
+  height: 340px;
+}
+
+/* === Images === */
+.room-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* === Content === */
+.room-info {
+  padding: 2rem;
+}
+
+.room-info h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.room-info p {
+  color: var(--text);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.learn-link {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--secondary);
+  padding-bottom: 2px;
+}
+
+.learn-link:hover {
+  opacity: 0.8;
+}
+
+/* === Indicator === */
+.indicator {
+  margin-top: 1.5rem;
+  color: var(--text);
+}
+
+
+/* =========================
+   Mobile & Tablet Responsive
+   ========================= */
+
+@media (max-width: 1024px) {
+  .room-card.active {
+    width: 90%;
+  }
+
+  .room-card.side {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-preview {
+    padding: 3rem 1.5rem;
+  }
+
+  .rooms-preview h2 {
+    font-size: 2rem;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
+  .carousel {
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    font-size: 2rem;
+  }
+
+  .room-card.active {
+    width: 100%;
+  }
+
+  .room-card.active img {
+    height: 260px;
+  }
+
+  .room-info {
+    padding: 1.4rem;
+  }
+
+  .room-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .room-info p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    display: none;
+  }
+
+  .indicator {
+    font-size: 0.85rem;
+  }
+}

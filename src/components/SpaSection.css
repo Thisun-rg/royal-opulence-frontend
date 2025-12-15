@@ -1,0 +1,67 @@
+.spa-section {
+  position: relative;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.spa-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 15, 59, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 6rem;
+}
+
+.spa-content {
+  max-width: 520px;
+  color: #fff;
+}
+
+.spa-content h2 {
+  font-size: 2.8rem;
+  color: var(--secondary);
+  margin-bottom: 0.6rem;
+}
+
+.spa-subtitle {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.spa-description {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.spa-link {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.spa-link:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .spa-overlay {
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .spa-content h2 {
+    font-size: 2.2rem;
+  }
+}
+

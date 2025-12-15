@@ -1,0 +1,91 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: var(--contrast);
+  color: white;
+  padding: 2rem;
+}
+
+.logo {
+  color: var(--secondary);
+  margin-bottom: 3rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: var(--primary);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--highlight);
+  padding: 1.8rem;
+  border-radius: 14px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Table */
+.table-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: var(--champagne);
+  text-align: left;
+}
