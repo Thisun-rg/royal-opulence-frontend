@@ -1,0 +1,51 @@
+.pay-wrap{
+  min-height: 100vh;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+}
+
+.pay-card{
+  width: 100%;
+  max-width: 640px;
+  background: white;
+  border: 2px solid var(--secondary);
+  border-radius: 22px;
+  box-shadow: 0 20px 55px rgba(0,0,0,0.12);
+  padding: 2.2rem;
+}
+
+.pay-title{
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.pay-summary{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: rgba(216,195,232,0.22);
+  border-radius: 18px;
+  padding: 1rem;
+  border: 1px solid rgba(197,162,83,0.35);
+}
+
+.label{
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.value{
+  margin: 0.15rem 0 0;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+@media (max-width: 560px){
+  .pay-summary{ grid-template-columns: 1fr; }
+}

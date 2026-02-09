@@ -1,5 +1,5 @@
-import api from "./axios";
+import api from "./axiosInstance";
 
-export const createBooking = (data) => {
-  return api.post("/api/bookings", data);
-};
+// This endpoint must match your backend controller
+export const createBookingCheckout = (payload) =>
+  api.post("/api/bookings/checkout", payload);

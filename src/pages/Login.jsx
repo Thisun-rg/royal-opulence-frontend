@@ -14,7 +14,8 @@ export default function Login() {
     try {
       const res = await login(email, password);
       localStorage.setItem("token", res.data.token);
-      navigate("/rooms");
+      navigate("/", { replace: true });
+
     } catch {
       alert("Login failed");
     }

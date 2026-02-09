@@ -1,0 +1,115 @@
+.roomCard {
+  border: 1.5px solid #c9a24d;   /* gold outline */
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+
+  /* ↓ reduce internal spacing */
+  padding-bottom: 14px;
+
+  /* optional: prevent cards from stretching */
+  align-self: start;
+}
+
+
+.roomCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 65px rgba(0,0,0,0.18);
+}
+
+.roomCard:hover {
+  border-color: #c9a24d;      
+}
+
+.roomTitle {
+  margin-bottom: 2px;
+  font-size: 1.15rem;
+}
+
+
+/* ===== IMAGE ===== */
+.roomImage img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* ===== CONTENT ===== */
+.roomContent {
+  padding: 6px 10px;
+}
+
+.roomContent h3 {
+  font-size: 1.6rem;
+  color: #3b1b4a;
+  margin-bottom: 0.5rem;
+}
+
+.roomDesc {
+  color: #6d5c74;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== META ===== */
+.roomMeta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #7a6a82;
+  margin-bottom: 1rem;
+}
+
+/* ===== PRICE ===== */
+.priceBox {
+  margin-bottom: 1.4rem;
+}
+
+.priceNight {
+  display: block;
+  font-size: 1.1rem;
+  color: #c9a24d;
+  font-weight: 600;
+}
+
+.priceTotal {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ===== BUTTON ===== */
+.bookBtn {
+  width: 100%;
+  background: #3b1b4a;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.bookBtn:hover {
+  background: #2c1238;
+}
+
+
+.roomFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 10px;
+}
+
+.featureChip {
+  background: #f5effa;              /* light purple */
+  border: 1px solid #c9a24d;        /* gold outline */
+  color: #2e0f3b;                   /* rich plum text */
+  padding: 7px 10px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+}

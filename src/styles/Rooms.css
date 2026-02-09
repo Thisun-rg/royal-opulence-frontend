@@ -1,0 +1,125 @@
+/* ===== PAGE ===== */
+.roomsPage {
+  background: #faf7f2;
+  padding-bottom: 4rem;
+}
+
+/* ===== HEADER ===== */
+.roomsHeader {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.roomsHeader h1 {
+  font-size: 3rem;
+  color: #3b1b4a;
+  margin-bottom: 0.5rem;
+}
+
+.roomsHeader p {
+  color: #6d5c74;
+  font-size: 1.1rem;
+}
+
+/* ===== SEARCH BAR ===== */
+.searchBar {
+  max-width: 1150px;
+  margin: 2.5rem auto 3.5rem;
+  padding: 1.8rem;
+  background: linear-gradient(
+    135deg,
+    #f3ecf9,
+    #f8f3fc
+  ); /* LIGHT PURPLE */
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(75, 40, 109, 0.12);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1.2rem;
+}
+
+
+.searchField {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchField label {
+  font-size: 0.85rem;
+  color: #6d5c74;
+  margin-bottom: 4px;
+}
+
+.searchField input,
+.searchField select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.searchBtn {
+  background: linear-gradient(135deg, #c9a24d, #b8943e);
+  color: #fff;
+  border: none;
+  padding: 14px 40px; /* BIGGER */
+  border-radius: 35px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: end;
+  box-shadow: 0 10px 25px rgba(201, 162, 77, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(201, 162, 77, 0.55);
+}
+
+
+
+
+/* ===== ROOMS GRID ===== */
+.roomsGrid {
+  max-width: 1400px;
+  margin: 1rem auto;
+  display: grid;
+
+  /* narrower cards */
+  grid-template-columns: repeat(4, minmax(350px, 600px));
+
+  gap: 1rem;
+  padding: 0 2rem;
+
+  /* center the whole grid */
+  justify-content: center;
+}
+
+
+.roomsHeader {
+  text-align: center;
+  padding: 4.5rem 1rem 1.5rem;
+}
+
+.priceNight {
+  color: #c9a24d;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+
+/* Responsive fallback */
+@media (max-width: 1200px) {
+  .roomsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .roomsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
