@@ -47,8 +47,9 @@ export default function RoomCard({
         </div>
 
         <button type="button" className="bookBtn" onClick={onBook}>
-          Book Now
-        </button>
+  Book Now
+</button>
+
 
 
       </div>

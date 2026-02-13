@@ -35,7 +35,8 @@ export default function Navbar() {
 
         {isAuthenticated && (
           <>
-            <Link className="book-btn" to="/book">Book Now</Link>
+            <Link className="book-btn" to="/rooms">Book Now</Link>
+
             <button className="logout-btn" onClick={logout}>Logout</button>
           </>
         )}
