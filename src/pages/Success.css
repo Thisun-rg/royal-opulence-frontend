@@ -1,0 +1,44 @@
+/* ===== BUTTON CONTAINER ===== */
+.successActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* ===== PRIMARY BUTTON (Gold) ===== */
+.btnPrimary {
+  background: linear-gradient(135deg, #c9a24d, #e6c36a);
+  color: #2e0f3b;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(201, 162, 77, 0.4);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(201, 162, 77, 0.6);
+}
+
+/* ===== SECONDARY BUTTON (Plum Outline) ===== */
+.btnSecondary {
+  background: transparent;
+  color: #3b1b4a;
+  border: 2px solid #3b1b4a;
+  padding: 11px 22px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btnSecondary:hover {
+  background: #3b1b4a;
+  color: white;
+  transform: translateY(-3px);
+}

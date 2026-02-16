@@ -1,7 +1,7 @@
 import api from "./axiosInstance";
 
-export const createStripePayment = (payload) =>
-  api.post("/api/v1/payments/stripe", payload);
+export const markPaymentSuccess = (id) =>
+  api.patch(`/api/v1/payments/${id}/success`);
 
-export const markPaymentPaid = (paymentId) =>
-  api.patch(`/api/v1/payments/${paymentId}/success`);
+export const markPaymentFailed = (id) =>
+  api.patch(`/api/v1/payments/${id}/failed`);

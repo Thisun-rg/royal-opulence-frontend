@@ -48,7 +48,7 @@ const ROOMS = [
     description: "Ultimate luxury with panoramic ocean views.",
     pricePerNight: 150000,
     image: presidentialImg,
-    features: ["Panoramic View", "Private Lounge", "Wi-Fi", "Breakfast"],
+    features: ["Panoramic View", "Lounge", "Wi-Fi", "Breakfast"],
   },
 ];
 

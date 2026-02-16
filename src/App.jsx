@@ -5,6 +5,8 @@ import Booking from "./pages/Booking";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
+import Success from "./pages/Success";
+import Invoice from "./pages/Invoice";
 
 const RequireAuth = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -40,6 +42,18 @@ export default function App() {
         />
 
         <Route path="*" element={<Navigate to="/" />} />
+
+        <Route path="/success/:paymentId" element={<Success />} />
+
+<Route
+  path="/invoice"
+  element={
+    <RequireAuth>
+      <Invoice />
+    </RequireAuth>
+  }
+/>
+
       </Routes>
     </BrowserRouter>
   );
