@@ -1,97 +1,41 @@
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useState } from "react";
-import { markPaymentPaid } from "../api/paymentApi";
+import { useNavigate } from "react-router-dom";
+import { confirmPayment } from "../api/paymentApi"; // API call to update backend
 
-export default function CheckoutForm({ paymentId, clientSecret }) {
+export default function CheckoutForm({ paymentId }) {
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const handlePay = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!stripe || !elements) {
-      alert("Stripe is still loading. Please wait 2 seconds and try again.");
-      return;
-    }
-
-    const card = elements.getElement(CardElement);
-    if (!card) {
-      alert("Card form not ready. Refresh and try again.");
-      return;
-    }
+    if (!stripe || !elements) return;
 
     setLoading(true);
+    const cardElement = elements.getElement(CardElement);
 
-    try {
-      const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: { card },
-      });
+    const { error, paymentIntent } = await stripe.confirmCardPayment(
+      elements._clientSecret || "",
+      { payment_method: { card: cardElement } }
+    );
 
-      if (error) {
-        alert(error.message);
-        return;
-      }
-
-      if (paymentIntent?.status === "succeeded") {
-        await markPaymentPaid(paymentId);
-        window.location.href = "/success";
-      } else {
-        alert("Payment not completed: " + paymentIntent?.status);
-      }
-    } catch (err) {
-      console.log(err);
-      alert("Payment failed");
-    } finally {
+    if (error) {
+      alert(error.message);
       setLoading(false);
+    } else if (paymentIntent.status === "succeeded") {
+      // Update backend payment status
+      await confirmPayment(paymentId);
+      navigate("/booking-success");
     }
   };
 
-  const stripeReady = !!stripe && !!elements;
-
   return (
-    <form onSubmit={handlePay}>
-      <div
-        style={{
-          padding: "14px 14px",
-          borderRadius: 14,
-          border: "1px solid rgba(197,162,83,0.75)",
-          background: "rgba(245,240,230,0.45)",
-        }}
-      >
-        <CardElement
-  options={{
-    style: {
-      base: {
-        fontSize: "16px",
-        color: "#1f1f1f",
-        "::placeholder": { color: "#777" },
-      },
-      invalid: { color: "#b00020" },
-    },
-  }}
-/>
-
-      </div>
-
-      <button
-        type="submit"
-        disabled={!stripeReady || loading}
-        style={{
-          marginTop: "1rem",
-          width: "100%",
-          padding: "14px 16px",
-          borderRadius: 14,
-          border: "none",
-          cursor: !stripeReady || loading ? "not-allowed" : "pointer",
-          background: "var(--secondary)",
-          color: "white",
-          fontSize: "1rem",
-          fontWeight: 700,
-          opacity: !stripeReady || loading ? 0.6 : 1,
-        }}
-      >
-        {!stripeReady ? "Loading Stripe..." : loading ? "Processing..." : "Pay Now"}
+    <form onSubmit={handleSubmit}>
+      <CardElement options={{ hidePostalCode: true }} />
+      <button type="submit" disabled={!stripe || loading} style={{ marginTop: 16, padding: "10px 25px", borderRadius: 8, background: "#C5A253", color: "#fff", border: "none", cursor: "pointer" }}>
+        {loading ? "Processing..." : "Pay Now"}
       </button>
     </form>
   );
